@@ -3,37 +3,36 @@
  * Date:
  * Name:
  */
-#include "task_2.cpp"
 
-NodePtr RedBlackTree::minimum(NodePtr node) {
-    // write your code here
-}
+class Problem3 {
+    bool isSubsetSum(int set[], int n, int sum) {
+        // write your code here
+        // The value of subset[i][j] will be true if
+        // there is a subset of set[0..j-1] with sum
+        // equal to i
+        bool subset[n + 1][sum + 1];
 
-void RedBlackTree::deleteNode(int data) {
-    // write your code here
-}
+        // If sum is 0, then answer is true
+        for (int i = 0; i <= n; i++)
+            subset[i][0] = true;
 
-void RedBlackTree::rbTransplant(NodePtr u, NodePtr v) {
-    // write your code here
-}
+        // If sum is not 0 and set is empty,
+        // then answer is false
+        for (int i = 1; i <= sum; i++)
+            subset[0][i] = false;
 
-// For balancing the tree after deletion
-void RedBlackTree::deleteFix(NodePtr x) {
-    // write your code here
-}
+        // Fill the subset table in bottom up manner
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= sum; j++) {
+                if (j < set[i - 1])
+                    subset[i][j] = subset[i - 1][j];
+                if (j >= set[i - 1])
+                    subset[i][j]
+                            = subset[i - 1][j]
+                              || subset[i - 1][j - set[i - 1]];
+            }
+        }
 
-void RedBlackTree::deleteNodeHelper(NodePtr node, int key) {
-    // write your code here
-}
-
-
-// For balancing the tree after insertion
-void RedBlackTree::insertFix(NodePtr k) {
-    // write your code here
-}
-
-
-// Inserting a node
-void RedBlackTree::insert(int nodes[], int N) {
-    // write your code here
-}
+        return subset[n][sum];
+    }
+};

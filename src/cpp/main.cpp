@@ -7,41 +7,21 @@
  */
 
 #include <iostream>
+#include "task_1.cpp"
+#include "task_2.cpp"
+#include "task_3.cpp"
+#include "task_4.cpp"
+#include "task_5.cpp"
+#include "task_6.cpp"
+#include "task_7.cpp"
+#include "task_8.cpp"
 #include "task_9.cpp"
 #include "task_10.cpp"
 
+using namespace std;
+
 int main() {
+    // write your code here
 
-    ////////////////////////////////////////////////
-    // TASK 1
-    RedBlackTree bst;
-    int arr[] = {11, 18, 10, 15, 23, 9, 17, 8, 16, 20};
-    bst.insert(arr, 10);
-
-//    bst.printTree();
-    ////////////////////////////////////////////////
-//    cout << endl;
-//    bst.numberOfChild();
-    cout << endl;
-    bst.printBlackHeight();
-
-
-    struct node *root = NULL;
-    root = insert(root, 8);
-    root = insert(root, 3);
-    root = insert(root, 1);
-    root = insert(root, 6);
-    root = insert(root, 7);
-    root = insert(root, 10);
-    root = insert(root, 14);
-    root = insert(root, 4);
-
-    cout << "Inorder traversal: ";
-    inorder(root);
-
-    cout << "\nAfter deleting 10\n";
-    root = deleteNode(root, 10);
-    cout << "Inorder traversal: ";
-    inorder(root);
     return 0;
 }
