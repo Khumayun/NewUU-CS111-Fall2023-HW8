@@ -17,9 +17,5 @@ class Problem6 {
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {
         // write your code here
-        if(root==nullptr) return false;
-        tsum-=root->val;
-        if(root->left==nullptr && root->right==nullptr && tsum==0) return true;
-        return hasPathSum(root->left,tsum) || hasPathSum(root->right,tsum);
     }
 };
